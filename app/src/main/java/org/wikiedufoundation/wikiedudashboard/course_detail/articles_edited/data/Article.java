@@ -7,7 +7,11 @@ import lombok.ToString;
 @AllArgsConstructor
 @Getter
 @ToString
+
 public class Article {
-    private int id;
+    private String id;
     private String title;
+    private String character_sum;
+    private String view_count;
+    private String url;
 }

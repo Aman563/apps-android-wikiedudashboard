@@ -6,5 +6,12 @@ import org.wikiedufoundation.wikiedudashboard.helper.Progressive;
 import org.wikiedufoundation.wikiedudashboard.helper.Toaster;
 
 public interface ArticlesEditedView extends Progressive, Toaster {
+    /**
+     * Return type is void.
+     * This method is implemented by CourseArticlesEditedFragment class.
+     * Used for setting provided data.
+     *
+     * @param data an instance of ArticlesEdited class.
+     */
     void setData(ArticlesEdited data);
 }

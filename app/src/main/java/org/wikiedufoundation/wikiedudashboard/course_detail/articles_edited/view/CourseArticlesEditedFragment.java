@@ -44,10 +44,23 @@ public class CourseArticlesEditedFragment extends Fragment implements ArticlesEd
     private String url;
 
 
+    /**
+     * Empty Constructor
+     */
     public CourseArticlesEditedFragment(){
 
     }
 
+    /**
+     * Return type is View.
+     * Used for getting and passing url to requestArticlesEdited method.
+     * Set adapter to the recycler view
+     *
+     * @param inflater an instance of LayoutInflater class
+     * @param container an instance of ViewGroup class
+     * @param savedInstanceState an instance of Bundle class
+     * @return an instance of View class which inflates the edited articles fragment
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_articles_edited,container,false);
@@ -68,6 +81,12 @@ public class CourseArticlesEditedFragment extends Fragment implements ArticlesEd
         return view;
     }
 
+    /**
+     * Return type is Void.
+     * Control the cases whwn data is present or not in the list.
+     *
+     * @param data an instance of ArticlesEdited class.
+     */
     @Override
     public void setData(ArticlesEdited data) {
         Log.d("ArticlesEditedFragment",data.toString());
@@ -84,6 +103,14 @@ public class CourseArticlesEditedFragment extends Fragment implements ArticlesEd
             tv_no_edited_articles.setVisibility(View.VISIBLE);
         }
     }
+
+    /**
+     * Return type is Void.
+     * Used to control the visibility of progress bar in the layout.
+     * Argument passed is either true or false.
+     *
+     * @param show a boolean type argument
+     */
     @Override
     public void showProgressBar(boolean show) {
         if (show){
@@ -93,6 +120,13 @@ public class CourseArticlesEditedFragment extends Fragment implements ArticlesEd
         }
     }
 
+    /**
+     * Return type is Void.
+     * Used for displaying any message.
+     * Argument type is string which is the message to be displayed.
+     *
+     * @param message an argument of String Data type
+     */
     @Override
     public void showMessage(String message) {
         ViewUtils.showToast(context, message);
